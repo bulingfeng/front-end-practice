@@ -1,15 +1,15 @@
 //index.ts
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router"
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
 const routers = [
   {
  path: '/index',
  name: 'home',
- component: () => import('../views/home/index.vue'),
+ component: () => import('@/views/home/index.vue'),
   },
 ];
 
 const router = createRouter({
- history: createWebHashHistory(),
+ history: createWebHistory(),
  routes: routers as unknown as RouteRecordRaw[]
 })
 
