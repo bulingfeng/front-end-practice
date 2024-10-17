@@ -11,7 +11,11 @@
         <div id="app">
             <h1>{{ message }}</h1>
             <button @click="clickButton">Change Message</button>
+            <p>Using v-html directive: <span v-html="rawHtml"></span></p>
         </div>
+
+        <h1 :id="id1" :style="{ color: textColor }">this is v-bind example</h1>
+        <button @click="changeColor">Change Color</button>
     </body>
 </html>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -19,12 +23,19 @@
     const app = Vue.createApp({
         data() {
             return {
-                message: 0
+                message: 0,
+                rawHtml: '<span style="color: red">This should be red.</span>',
+                id1: 'h1',
+                textColor: 'red' // 默认颜色
             }
         },
         methods: {
             clickButton() {
                 this.message++
+            },
+            changeColor(){
+                alert('Change Color')
+                this.textColor = 'red'; // 修改颜色
             }
         }
     })
