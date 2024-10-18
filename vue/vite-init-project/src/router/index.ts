@@ -4,7 +4,7 @@ const routers = [
   {
  path: '/index',
  name: 'home',
- component: () => import('@/views/home/index.vue'),
+ component: () => import('@/views/index.vue'),
   },
 ];
 
