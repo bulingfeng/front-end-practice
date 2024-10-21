@@ -2,19 +2,24 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
 const routers = [
   {
- path: '/index',
- name: 'home',
- component: () => import('@/views/index.vue'),
+    path: '/index',
+    name: 'home',
+    component: () => import('@/views/index.vue'),
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login/login.vue'),
   },
 ];
 
 const router = createRouter({
- history: createWebHistory(),
- routes: routers as unknown as RouteRecordRaw[]
+  history: createWebHistory(),
+  routes: routers as unknown as RouteRecordRaw[]
 })
 
 // 路由守卫
 router.beforeEach((to, from, next) => {
- next()
+  next()
 })
 export default router;
